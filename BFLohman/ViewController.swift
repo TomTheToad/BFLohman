@@ -29,10 +29,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         tricep.delegate = self
         subscapularis.delegate = self
         
-        bodyWeight.keyboardType = .numberPad
-        abdomen.keyboardType = .numberPad
-        tricep.keyboardType = .numberPad
-        subscapularis.keyboardType = .numberPad
+        bodyWeight.keyboardType = .decimalPad
+        abdomen.keyboardType = .decimalPad
+        tricep.keyboardType = .decimalPad
+        subscapularis.keyboardType = .decimalPad
         
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         tap.cancelsTouchesInView = false
@@ -92,14 +92,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         minWeight.text =  "\(min)"
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        textField.resignFirstResponder()
+//        return true
+//    }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        bodyWeight.text = ""
-        bodyFat.text = ""
+        minWeight.text = "00"
+        bodyFat.text = "00"
     }
     
 }

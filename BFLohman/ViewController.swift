@@ -24,7 +24,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        bodyWeight.delegate = self
+        abdomen.delegate = self
+        tricep.delegate = self
+        subscapularis.delegate = self
+        
+        bodyWeight.keyboardType = .numberPad
+        abdomen.keyboardType = .numberPad
+        tricep.keyboardType = .numberPad
+        subscapularis.keyboardType = .numberPad
+        
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+        
     }
     
     func calculateBodyDensity(sumOfMeasurements: Float) -> Float {
@@ -82,6 +95,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        bodyWeight.text = ""
+        bodyFat.text = ""
     }
     
 }

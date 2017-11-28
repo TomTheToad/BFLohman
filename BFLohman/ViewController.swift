@@ -11,28 +11,70 @@ import UIKit
 class ViewController: UIViewController, UITextFieldDelegate {
     
     // IBOutlets
+    // BodyWeight
     @IBOutlet weak var bodyWeight: UITextField!
-    @IBOutlet weak var abdomen: UITextField!
-    @IBOutlet weak var tricep: UITextField!
-    @IBOutlet weak var subscapularis: UITextField!
     
+    // Abdomen
+    @IBOutlet weak var ab1TextField: UITextField!
+    @IBOutlet weak var ab2TextField: UITextField!
+    @IBOutlet weak var ab3TextField: UITextField!
+    
+    // Tricep
+    @IBOutlet weak var tri1TextField: UITextField!
+    @IBOutlet weak var tri2TextField: UITextField!
+    @IBOutlet weak var tri3TextField: UITextField!
+    
+    // SubScap
+    @IBOutlet weak var scap1TextField: UITextField!
+    @IBOutlet weak var scap2TextField: UITextField!
+    @IBOutlet weak var scap3TextField: UITextField!
+    
+    // Output Fields (body fat and min weight)
     @IBOutlet weak var bodyFat: UILabel!
     @IBOutlet weak var minWeight: UILabel!
+    
+    // IB Actions
+    @IBAction func clearButton(_ sender: Any) {
+        clearTextFields()
+    }
     
     @IBAction func calculateButton(_ sender: Any) {
         setBodyFat()
     }
+    
+    // Calculated Fields
+    var abdomenAVG: Float {
+        let first = Float(ab1TextField.text ?? "0") ?? 0
+        let second = Float(ab2TextField.text ?? "0") ?? 0
+        let third = Float(ab3TextField.text ?? "0") ?? 0
+        return (first + second + third) / 3
+    }
+    
+    var tricepAVG: Float {
+        let first = Float(tri1TextField.text ?? "0") ?? 0
+        let second = Float(tri2TextField.text ?? "0") ?? 0
+        let third = Float(tri3TextField.text ?? "0") ?? 0
+        return (first + second + third) / 3
+    }
+    
+    var subscapularisAVG: Float {
+        let first = Float(scap1TextField.text ?? "0") ?? 0
+        let second = Float(scap2TextField.text ?? "0") ?? 0
+        let third = Float(scap3TextField.text ?? "0") ?? 0
+        return (first + second + third) / 3
+    }
+    
+    var sumOfSkinFolds: Float {
+        return abdomenAVG + tricepAVG + subscapularisAVG
+    }
+    
+    var textFields: [UITextField]?
+
+    
+    // View Triggered Events
     override func viewDidLoad() {
         super.viewDidLoad()
-        bodyWeight.delegate = self
-        abdomen.delegate = self
-        tricep.delegate = self
-        subscapularis.delegate = self
-        
-        bodyWeight.keyboardType = .decimalPad
-        abdomen.keyboardType = .decimalPad
-        tricep.keyboardType = .decimalPad
-        subscapularis.keyboardType = .decimalPad
+        setUpTextFields()
         
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         tap.cancelsTouchesInView = false
@@ -40,8 +82,35 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    func calculateBodyDensity(sumOfMeasurements: Float) -> Float {
-        return (1.0973 - (sumOfMeasurements * 0.000815)) + (sumOfMeasurements * 0.00000084)
+    // Add delegate and keyboard type
+    func setUpTextFields() {
+        textFields = [ab1TextField, ab2TextField, ab3TextField, tri1TextField, tri2TextField, tri3TextField, scap1TextField, scap2TextField, scap3TextField, bodyWeight]
+        
+        guard let textFields = textFields else {
+            return
+        }
+        
+        for textField in textFields {
+            textField.delegate = self
+            textField.keyboardType = .decimalPad
+        }
+    }
+    
+    func clearTextFields() {
+        guard let textFields = textFields else {
+            return
+        }
+        
+        for textfield in textFields {
+            textfield.text = ""
+        }
+        
+        bodyFat.text = "00"
+        minWeight.text = "00"
+    }
+    
+    func calculateBodyDensity() -> Float {
+        return (1.0973 - (sumOfSkinFolds * 0.000815)) + (sumOfSkinFolds * 0.00000084)
     }
 
     func calculateBodyFatPercentage(bodyDensity: Float) -> Float {
@@ -49,32 +118,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func setBodyFat() {
-        
-        guard let thisAB = abdomen.text else {
-            return
-        }
-        
-        guard let thisTri = tricep.text else {
-            return
-        }
-        
-        guard let thisSubscap = subscapularis.text else {
-            return
-        }
-        
-        guard let ab = Float(thisAB) else {
-            return
-        }
-        
-        guard let tri = Float(thisTri) else {
-            return
-        }
-        
-        guard let subscap = Float(thisSubscap) else {
-            return
-        }
-        
-        let bodyDensity = calculateBodyDensity(sumOfMeasurements: ab + tri + subscap)
+        let bodyDensity = calculateBodyDensity()
         let bodyFatPercentage = calculateBodyFatPercentage(bodyDensity: bodyDensity)
         
         bodyFat.text = "\(bodyFatPercentage)"
@@ -91,11 +135,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         minWeight.text =  "\(min)"
     }
-    
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        textField.resignFirstResponder()
-//        return true
-//    }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         minWeight.text = "00"

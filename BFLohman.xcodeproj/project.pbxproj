@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C779DEF91FDAC8910011A5D2 /* KeyboardButtonsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C779DEF81FDAC8910011A5D2 /* KeyboardButtonsView.xib */; };
+		C779DEFB1FDAD00E0011A5D2 /* KeyboardButtonsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779DEFA1FDAD00E0011A5D2 /* KeyboardButtonsController.swift */; };
 		C7FD45801FCCDD0800AD38FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FD457F1FCCDD0800AD38FB /* AppDelegate.swift */; };
 		C7FD45821FCCDD0800AD38FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FD45811FCCDD0800AD38FB /* ViewController.swift */; };
 		C7FD45851FCCDD0800AD38FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7FD45831FCCDD0800AD38FB /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C779DEF81FDAC8910011A5D2 /* KeyboardButtonsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardButtonsView.xib; sourceTree = "<group>"; };
+		C779DEFA1FDAD00E0011A5D2 /* KeyboardButtonsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButtonsController.swift; sourceTree = "<group>"; };
 		C7FD457C1FCCDD0800AD38FB /* BFLohman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BFLohman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7FD457F1FCCDD0800AD38FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7FD45811FCCDD0800AD38FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +39,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C779DEF71FDAC8610011A5D2 /* AccessoaryView */ = {
+			isa = PBXGroup;
+			children = (
+				C779DEF81FDAC8910011A5D2 /* KeyboardButtonsView.xib */,
+				C779DEFA1FDAD00E0011A5D2 /* KeyboardButtonsController.swift */,
+			);
+			path = AccessoaryView;
+			sourceTree = "<group>";
+		};
 		C7FD45731FCCDD0800AD38FB = {
 			isa = PBXGroup;
 			children = (
@@ -57,6 +70,7 @@
 				C7FD457F1FCCDD0800AD38FB /* AppDelegate.swift */,
 				C7FD45811FCCDD0800AD38FB /* ViewController.swift */,
 				C7FD45831FCCDD0800AD38FB /* Main.storyboard */,
+				C779DEF71FDAC8610011A5D2 /* AccessoaryView */,
 				C7FD45861FCCDD0800AD38FB /* Assets.xcassets */,
 				C7FD45881FCCDD0800AD38FB /* LaunchScreen.storyboard */,
 				C7FD458B1FCCDD0800AD38FB /* Info.plist */,
@@ -123,6 +137,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C779DEF91FDAC8910011A5D2 /* KeyboardButtonsView.xib in Resources */,
 				C7FD458A1FCCDD0800AD38FB /* LaunchScreen.storyboard in Resources */,
 				C7FD45871FCCDD0800AD38FB /* Assets.xcassets in Resources */,
 				C7FD45851FCCDD0800AD38FB /* Main.storyboard in Resources */,
@@ -138,6 +153,7 @@
 			files = (
 				C7FD45821FCCDD0800AD38FB /* ViewController.swift in Sources */,
 				C7FD45801FCCDD0800AD38FB /* AppDelegate.swift in Sources */,
+				C779DEFB1FDAD00E0011A5D2 /* KeyboardButtonsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

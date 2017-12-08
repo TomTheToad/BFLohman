@@ -93,7 +93,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         for textField in textFields {
             textField.delegate = self
             textField.keyboardType = .decimalPad
+            addTextFieldAccessoryView(textField: textField)
         }
+    }
+    
+    // Add accessory views to text fields
+    func addTextFieldAccessoryView(textField: UITextField) {
+        let accView = Bundle.main.loadNibNamed("KeyboardButtonsView", owner: self, options: nil)?.first as! UIView
+        
+        textField.inputAccessoryView = accView
     }
     
     func clearTextFields() {

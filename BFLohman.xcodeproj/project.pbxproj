@@ -10,7 +10,7 @@
 		C779DEF91FDAC8910011A5D2 /* KeyboardButtonsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C779DEF81FDAC8910011A5D2 /* KeyboardButtonsView.xib */; };
 		C779DEFB1FDAD00E0011A5D2 /* KeyboardButtonsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779DEFA1FDAD00E0011A5D2 /* KeyboardButtonsController.swift */; };
 		C7FD45801FCCDD0800AD38FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FD457F1FCCDD0800AD38FB /* AppDelegate.swift */; };
-		C7FD45821FCCDD0800AD38FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FD45811FCCDD0800AD38FB /* ViewController.swift */; };
+		C7FD45821FCCDD0800AD38FB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FD45811FCCDD0800AD38FB /* MainViewController.swift */; };
 		C7FD45851FCCDD0800AD38FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7FD45831FCCDD0800AD38FB /* Main.storyboard */; };
 		C7FD45871FCCDD0800AD38FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7FD45861FCCDD0800AD38FB /* Assets.xcassets */; };
 		C7FD458A1FCCDD0800AD38FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7FD45881FCCDD0800AD38FB /* LaunchScreen.storyboard */; };
@@ -21,7 +21,7 @@
 		C779DEFA1FDAD00E0011A5D2 /* KeyboardButtonsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButtonsController.swift; sourceTree = "<group>"; };
 		C7FD457C1FCCDD0800AD38FB /* BFLohman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BFLohman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7FD457F1FCCDD0800AD38FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C7FD45811FCCDD0800AD38FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C7FD45811FCCDD0800AD38FB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C7FD45841FCCDD0800AD38FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C7FD45861FCCDD0800AD38FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7FD45891FCCDD0800AD38FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				C7FD457F1FCCDD0800AD38FB /* AppDelegate.swift */,
-				C7FD45811FCCDD0800AD38FB /* ViewController.swift */,
+				C7FD45811FCCDD0800AD38FB /* MainViewController.swift */,
 				C7FD45831FCCDD0800AD38FB /* Main.storyboard */,
 				C779DEF71FDAC8610011A5D2 /* AccessoaryView */,
 				C7FD45861FCCDD0800AD38FB /* Assets.xcassets */,
@@ -151,7 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7FD45821FCCDD0800AD38FB /* ViewController.swift in Sources */,
+				C7FD45821FCCDD0800AD38FB /* MainViewController.swift in Sources */,
 				C7FD45801FCCDD0800AD38FB /* AppDelegate.swift in Sources */,
 				C779DEFB1FDAD00E0011A5D2 /* KeyboardButtonsController.swift in Sources */,
 			);

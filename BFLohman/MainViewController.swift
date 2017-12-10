@@ -68,7 +68,9 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         return abdomenAVG + tricepAVG + subscapularisAVG
     }
     
+    // Fields
     var textFields: [UITextField]?
+    var currentTextField: UITextField?
 
     
     // View Triggered Events
@@ -147,7 +149,39 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         minWeight.text = "00"
         bodyFat.text = "00"
+        currentTextField = textField
     }
     
+    func nextTextField() {
+        guard let textField = currentTextField else {
+            return
+        }
+        
+        guard let count = textFields?.count else {
+            return
+        }
+        
+        if textField.tag < count {
+            if let nextTextField = textField.superview?.viewWithTag(textField.tag + 1) {
+                nextTextField.becomeFirstResponder()
+            }
+            
+        }
+        
+    }
+    
+    func previousTextField() {
+        guard let textField = currentTextField else {
+            return
+        }
+        
+        if textField.tag < 0 {
+            if let previousTextField = textField.superview?.viewWithTag(textField.tag - 1) {
+                previousTextField.becomeFirstResponder()
+            }
+            
+        }
+        
+    }
 }
 

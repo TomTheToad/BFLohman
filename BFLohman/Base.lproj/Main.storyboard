@@ -266,7 +266,6 @@
                                         <state key="normal" title="Previous"/>
                                         <connections>
                                             <action selector="previousButtonAction:" destination="zys-6b-292" eventType="touchUpInside" id="A3M-uB-mao"/>
-                                            <action selector="previousButtonAction:" destination="9xD-yi-0Fx" eventType="touchUpInside" id="YWT-AF-osN"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzo-H4-w9S">
@@ -275,7 +274,6 @@
                                         <state key="normal" title="Calculate"/>
                                         <connections>
                                             <action selector="calculateButtonAction:" destination="zys-6b-292" eventType="touchUpInside" id="Dd2-xt-djZ"/>
-                                            <action selector="calculateButtonAction:" destination="9xD-yi-0Fx" eventType="touchUpInside" id="liQ-lZ-NQf"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2B-jp-pS5">
@@ -283,7 +281,6 @@
                                         <state key="normal" title="Next"/>
                                         <connections>
                                             <action selector="nextButtonAction:" destination="zys-6b-292" eventType="touchUpInside" id="awK-Zs-EYX"/>
-                                            <action selector="nextButtonAction:" destination="9xD-yi-0Fx" eventType="touchUpInside" id="dzy-il-iDN"/>
                                         </connections>
                                     </button>
                                 </subviews>

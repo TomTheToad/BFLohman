@@ -61,11 +61,11 @@
 				C7FD457F1FCCDD0800AD38FB /* AppDelegate.swift */,
 				C7FD45811FCCDD0800AD38FB /* MainViewController.swift */,
 				C7FD45831FCCDD0800AD38FB /* Main.storyboard */,
+				C738195A1FDEC8F000C14376 /* KeyboardButtonsView.swift */,
 				C779DEFA1FDAD00E0011A5D2 /* KeyboardButtonsController.swift */,
 				C7FD45861FCCDD0800AD38FB /* Assets.xcassets */,
 				C7FD45881FCCDD0800AD38FB /* LaunchScreen.storyboard */,
 				C7FD458B1FCCDD0800AD38FB /* Info.plist */,
-				C738195A1FDEC8F000C14376 /* KeyboardButtonsView.swift */,
 			);
 			path = BFLohman;
 			sourceTree = "<group>";

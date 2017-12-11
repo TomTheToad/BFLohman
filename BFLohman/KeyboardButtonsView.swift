@@ -27,6 +27,7 @@ class KeyboardButtonsView: UIView {
         print("calculate button")
         viewDelegate.calculate()
     }
+    
     @IBAction func nextButtonAction(_ sender: Any) {
         print("next button")
         viewDelegate.nextTextField()

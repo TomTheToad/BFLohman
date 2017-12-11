@@ -87,20 +87,21 @@ class MainViewController: UIViewController, UITextFieldDelegate, KeyboardButtons
     
     // Add delegate and keyboard type
     func setUpTextFields() {
-        textFields = [ab1TextField, ab2TextField, ab3TextField, tri1TextField, tri2TextField, tri3TextField, scap1TextField, scap2TextField, scap3TextField, bodyWeight]
+        textFields = [bodyWeight, ab1TextField, ab2TextField, ab3TextField, tri1TextField, tri2TextField, tri3TextField, scap1TextField, scap2TextField, scap3TextField]
         
         guard let textFields = textFields else {
             return
         }
         
+        guard let KBView = storyboard?.instantiateViewController(withIdentifier: "KeyboardButtons") as? KeyboardButtonsController else {
+            print("Error locating KeyboardController")
+            return
+        }
+        
+        KBView.buttondelegate = self
+        
         for textField in textFields {
-            guard let KBView = storyboard?.instantiateViewController(withIdentifier: "KeyboardButtons") as? KeyboardButtonsController else {
-                print("Error locating KeyboardController")
-                return
-            }
-            
-            KBView.buttondelegate = self
-            
+
             guard let thisView = KBView.view as? KeyboardButtonsView else {
                 print("could not instantiate the view")
                 return
@@ -161,23 +162,24 @@ class MainViewController: UIViewController, UITextFieldDelegate, KeyboardButtons
     
     // KeyboardButtonsDelegate required methods
     func nextTextField() {
-        print("next func reached")
-        
         guard let textField = currentTextField else {
             return
         }
         
-        guard let count = textFields?.count else {
+        guard let fields = textFields else {
             return
         }
         
-        if textField.tag < count {
-            if let nextTextField = textField.superview?.viewWithTag(textField.tag + 1) {
-                nextTextField.becomeFirstResponder()
-            }
-            
+        guard let currentIndex = fields.index(of: textField) else {
+            return
         }
         
+        let nextIndex = currentIndex.advanced(by: 1)
+        if nextIndex < fields.count {
+            let nextTextField = fields[nextIndex]
+            nextTextField.becomeFirstResponder()
+        }
+ 
     }
     
     func calculate() {
@@ -186,16 +188,22 @@ class MainViewController: UIViewController, UITextFieldDelegate, KeyboardButtons
     }
     
     func previousTextField() {
-        print("previous func reached")
         guard let textField = currentTextField else {
             return
         }
         
-        if textField.tag < 0 {
-            if let previousTextField = textField.superview?.viewWithTag(textField.tag - 1) {
-                previousTextField.becomeFirstResponder()
-            }
-            
+        guard let fields = textFields else {
+            return
+        }
+        
+        guard let currentIndex = fields.index(of: textField) else {
+            return
+        }
+        
+        let previousIndex = currentIndex.advanced(by: -1)
+        if previousIndex >= 0 {
+            let previousTextField = fields[previousIndex]
+            previousTextField.becomeFirstResponder()
         }
         
     }

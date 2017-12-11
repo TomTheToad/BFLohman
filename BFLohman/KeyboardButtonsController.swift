@@ -18,16 +18,16 @@ class KeyboardButtonsController: UIViewController {
     
     var buttondelegate: KeyboardButtonsDelegate!
     
-    @IBAction func previousButtonAction(_ sender: Any) {
-        // print("previous button clicked")
-        // buttondelegate.previousTextField()
-    }
-    @IBAction func calculateButtonAction(_ sender: Any) {
-        // print("calculate button clicked")
-        // buttondelegate.calculate()
-    }
-    @IBAction func nextButtonAction(_ sender: Any) {
-        // print("next button clicked")
-        // buttondelegate.nextTextField()
-    }
+//    @IBAction func previousButtonAction(_ sender: Any) {
+//        // print("previous button clicked")
+//        // buttondelegate.previousTextField()
+//    }
+//    @IBAction func calculateButtonAction(_ sender: Any) {
+//        // print("calculate button clicked")
+//        // buttondelegate.calculate()
+//    }
+//    @IBAction func nextButtonAction(_ sender: Any) {
+//        // print("next button clicked")
+//        // buttondelegate.nextTextField()
+//    }
 }

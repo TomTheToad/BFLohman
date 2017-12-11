@@ -8,11 +8,11 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UITextFieldDelegate {
+class MainViewController: UIViewController, UITextFieldDelegate, KeyboardButtonsDelegate, customButtonViewDelegate {
     
     // IBOutlets
-    // BodyWeight
     @IBOutlet weak var bodyWeight: UITextField!
+    @IBOutlet weak var clearButton: UIButton!
     
     // Abdomen
     @IBOutlet weak var ab1TextField: UITextField!
@@ -77,6 +77,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTextFields()
+        clearButton.layer.cornerRadius = clearButton.frame.size.height/2
         
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         tap.cancelsTouchesInView = false
@@ -93,17 +94,23 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         }
         
         for textField in textFields {
+            guard let KBView = storyboard?.instantiateViewController(withIdentifier: "KeyboardButtons") as? KeyboardButtonsController else {
+                print("Error locating KeyboardController")
+                return
+            }
+            
+            KBView.buttondelegate = self
+            
+            guard let thisView = KBView.view as? KeyboardButtonsView else {
+                print("could not instantiate the view")
+                return
+            }
+            
             textField.delegate = self
+            thisView.viewDelegate = self
             textField.keyboardType = .decimalPad
-            addTextFieldAccessoryView(textField: textField)
+            textField.inputAccessoryView = thisView
         }
-    }
-    
-    // Add accessory views to text fields
-    func addTextFieldAccessoryView(textField: UITextField) {
-        let accView = Bundle.main.loadNibNamed("KeyboardButtonsView", owner: self, options: nil)?.first as! UIView
-        
-        textField.inputAccessoryView = accView
     }
     
     func clearTextFields() {
@@ -152,7 +159,10 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         currentTextField = textField
     }
     
+    // KeyboardButtonsDelegate required methods
     func nextTextField() {
+        print("next func reached")
+        
         guard let textField = currentTextField else {
             return
         }
@@ -170,7 +180,13 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    func calculate() {
+        print("calculate func reached")
+        setBodyFat()
+    }
+    
     func previousTextField() {
+        print("previous func reached")
         guard let textField = currentTextField else {
             return
         }

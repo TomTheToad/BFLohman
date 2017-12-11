@@ -205,11 +205,6 @@
                                 <state key="normal" title="Clear">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="clearButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cXK-fq-9Nz"/>
                                 </connections>
@@ -241,6 +236,7 @@
                         <outlet property="ab3TextField" destination="NMe-dx-jbC" id="h3W-Iq-1qk"/>
                         <outlet property="bodyFat" destination="Zc6-Hb-eXb" id="icL-x5-NmO"/>
                         <outlet property="bodyWeight" destination="cnP-9J-1Gj" id="LYA-cx-1uV"/>
+                        <outlet property="clearButton" destination="CVN-Kw-3TJ" id="WE1-LQ-lLK"/>
                         <outlet property="minWeight" destination="nJd-p8-w2D" id="SSe-ib-yC1"/>
                         <outlet property="scap1TextField" destination="rSk-5f-Ypt" id="WNq-5O-Kmj"/>
                         <outlet property="scap2TextField" destination="Smj-Ki-KwQ" id="SEY-fo-Elo"/>
@@ -253,6 +249,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+        <!--Keyboard Buttons Controller-->
+        <scene sceneID="Bv7-ho-DmT">
+            <objects>
+                <viewController storyboardIdentifier="KeyboardButtons" autoresizesArchivedViewToFullSize="NO" id="9xD-yi-0Fx" customClass="KeyboardButtonsController" customModule="BFLohman" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zys-6b-292" customClass="KeyboardButtonsView" customModule="BFLohman" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mon-Yt-mdg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="df9-Ub-J0b">
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
+                                        <state key="normal" title="Previous"/>
+                                        <connections>
+                                            <action selector="previousButtonAction:" destination="zys-6b-292" eventType="touchUpInside" id="A3M-uB-mao"/>
+                                            <action selector="previousButtonAction:" destination="9xD-yi-0Fx" eventType="touchUpInside" id="YWT-AF-osN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzo-H4-w9S">
+                                        <rect key="frame" x="125" y="0.0" width="125" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Calculate"/>
+                                        <connections>
+                                            <action selector="calculateButtonAction:" destination="zys-6b-292" eventType="touchUpInside" id="Dd2-xt-djZ"/>
+                                            <action selector="calculateButtonAction:" destination="9xD-yi-0Fx" eventType="touchUpInside" id="liQ-lZ-NQf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2B-jp-pS5">
+                                        <rect key="frame" x="250" y="0.0" width="125" height="30"/>
+                                        <state key="normal" title="Next"/>
+                                        <connections>
+                                            <action selector="nextButtonAction:" destination="zys-6b-292" eventType="touchUpInside" id="awK-Zs-EYX"/>
+                                            <action selector="nextButtonAction:" destination="9xD-yi-0Fx" eventType="touchUpInside" id="dzy-il-iDN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EA3-Kf-sbl" firstAttribute="trailing" secondItem="mon-Yt-mdg" secondAttribute="trailing" id="RqP-Au-Dlq"/>
+                            <constraint firstItem="mon-Yt-mdg" firstAttribute="leading" secondItem="EA3-Kf-sbl" secondAttribute="leading" id="d71-VV-wlk"/>
+                            <constraint firstItem="mon-Yt-mdg" firstAttribute="top" secondItem="EA3-Kf-sbl" secondAttribute="top" id="lmL-DF-Gck"/>
+                            <constraint firstItem="mon-Yt-mdg" firstAttribute="bottom" secondItem="EA3-Kf-sbl" secondAttribute="bottom" id="wZV-ir-yeM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EA3-Kf-sbl"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="30"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gzA-Nu-ovn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="977" y="-154"/>
         </scene>
     </scenes>
 </document>

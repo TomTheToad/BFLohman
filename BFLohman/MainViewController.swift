@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UITextFieldDelegate, KeyboardButtonsDelegate, customButtonViewDelegate {
+class MainViewController: UIViewController, UITextFieldDelegate, customButtonViewDelegate {
     
     // IBOutlets
     @IBOutlet weak var bodyWeight: UITextField!
@@ -97,8 +97,6 @@ class MainViewController: UIViewController, UITextFieldDelegate, KeyboardButtons
             print("Error locating KeyboardController")
             return
         }
-        
-        KBView.buttondelegate = self
         
         for textField in textFields {
 

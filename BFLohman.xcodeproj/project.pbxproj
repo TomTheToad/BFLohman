@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C712B3011FE2F9B9004D1102 /* TeamCaliperCalculator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C712B2FF1FE2F9B9004D1102 /* TeamCaliperCalculator.xcdatamodeld */; };
 		C738195B1FDEC8F000C14376 /* KeyboardButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C738195A1FDEC8F000C14376 /* KeyboardButtonsView.swift */; };
+		C758F8571FE2BC000068EFD9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C758F8561FE2BC000068EFD9 /* CoreData.framework */; };
+		C758F85A1FE2BD360068EFD9 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C758F8591FE2BD360068EFD9 /* CoreDataController.swift */; };
 		C779DEFB1FDAD00E0011A5D2 /* KeyboardButtonsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779DEFA1FDAD00E0011A5D2 /* KeyboardButtonsController.swift */; };
 		C7FD45801FCCDD0800AD38FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FD457F1FCCDD0800AD38FB /* AppDelegate.swift */; };
 		C7FD45821FCCDD0800AD38FB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FD45811FCCDD0800AD38FB /* MainViewController.swift */; };
@@ -17,7 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C712B3001FE2F9B9004D1102 /* TeamCaliperCalculator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TeamCaliperCalculator.xcdatamodel; sourceTree = "<group>"; };
 		C738195A1FDEC8F000C14376 /* KeyboardButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButtonsView.swift; sourceTree = "<group>"; };
+		C758F8561FE2BC000068EFD9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C758F8591FE2BD360068EFD9 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		C779DEFA1FDAD00E0011A5D2 /* KeyboardButtonsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButtonsController.swift; sourceTree = "<group>"; };
 		C7FD457C1FCCDD0800AD38FB /* BFLohman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BFLohman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7FD457F1FCCDD0800AD38FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -33,17 +39,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C758F8571FE2BC000068EFD9 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C758F8551FE2BC000068EFD9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C758F8561FE2BC000068EFD9 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C758F8581FE2BD1D0068EFD9 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				C758F8591FE2BD360068EFD9 /* CoreDataController.swift */,
+				C712B2FF1FE2F9B9004D1102 /* TeamCaliperCalculator.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		C7FD45731FCCDD0800AD38FB = {
 			isa = PBXGroup;
 			children = (
 				C7FD457E1FCCDD0800AD38FB /* BFLohman */,
 				C7FD457D1FCCDD0800AD38FB /* Products */,
+				C758F8551FE2BC000068EFD9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +83,7 @@
 		C7FD457E1FCCDD0800AD38FB /* BFLohman */ = {
 			isa = PBXGroup;
 			children = (
+				C758F8581FE2BD1D0068EFD9 /* CoreData */,
 				C7FD457F1FCCDD0800AD38FB /* AppDelegate.swift */,
 				C7FD45811FCCDD0800AD38FB /* MainViewController.swift */,
 				C7FD45831FCCDD0800AD38FB /* Main.storyboard */,
@@ -144,8 +170,10 @@
 			files = (
 				C7FD45821FCCDD0800AD38FB /* MainViewController.swift in Sources */,
 				C7FD45801FCCDD0800AD38FB /* AppDelegate.swift in Sources */,
+				C758F85A1FE2BD360068EFD9 /* CoreDataController.swift in Sources */,
 				C779DEFB1FDAD00E0011A5D2 /* KeyboardButtonsController.swift in Sources */,
 				C738195B1FDEC8F000C14376 /* KeyboardButtonsView.swift in Sources */,
+				C712B3011FE2F9B9004D1102 /* TeamCaliperCalculator.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +314,7 @@
 				DEVELOPMENT_TEAM = FKN7L9W88A;
 				INFOPLIST_FILE = BFLohman/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tomthetoad.BFLohman;
+				PRODUCT_BUNDLE_IDENTIFIER = com.coquicoder.teamcalipercalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -301,7 +329,7 @@
 				DEVELOPMENT_TEAM = FKN7L9W88A;
 				INFOPLIST_FILE = BFLohman/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tomthetoad.BFLohman;
+				PRODUCT_BUNDLE_IDENTIFIER = com.coquicoder.teamcalipercalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -330,6 +358,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C712B2FF1FE2F9B9004D1102 /* TeamCaliperCalculator.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C712B3001FE2F9B9004D1102 /* TeamCaliperCalculator.xcdatamodel */,
+			);
+			currentVersion = C712B3001FE2F9B9004D1102 /* TeamCaliperCalculator.xcdatamodel */;
+			path = TeamCaliperCalculator.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C7FD45741FCCDD0800AD38FB /* Project object */;
 }

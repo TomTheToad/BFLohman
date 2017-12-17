@@ -19,17 +19,14 @@ class KeyboardButtonsView: UIView {
     var viewDelegate: customButtonViewDelegate!
     
     @IBAction func previousButtonAction(_ sender: Any) {
-        print("previous button")
         viewDelegate.previousTextField()
     }
     
     @IBAction func calculateButtonAction(_ sender: Any) {
-        print("calculate button")
         viewDelegate.calculate()
     }
     
     @IBAction func nextButtonAction(_ sender: Any) {
-        print("next button")
         viewDelegate.nextTextField()
     }
 }

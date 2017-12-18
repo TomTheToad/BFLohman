@@ -22,10 +22,6 @@ class KeyboardButtonsView: UIView {
         viewDelegate.previousTextField()
     }
     
-    @IBAction func calculateButtonAction(_ sender: Any) {
-        viewDelegate.calculate()
-    }
-    
     @IBAction func nextButtonAction(_ sender: Any) {
         viewDelegate.nextTextField()
     }

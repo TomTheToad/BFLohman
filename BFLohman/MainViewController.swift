@@ -181,7 +181,6 @@ class MainViewController: UIViewController, UITextFieldDelegate, customButtonVie
     }
     
     func calculate() {
-        print("calculate func reached")
         setBodyFat()
     }
     

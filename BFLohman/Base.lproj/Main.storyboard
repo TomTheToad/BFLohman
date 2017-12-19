@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -196,36 +195,20 @@
                                     <action selector="calculateButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q7c-A0-bzx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVN-Kw-3TJ">
-                                <rect key="frame" x="315" y="20" width="40" height="40"/>
-                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="gyO-LO-Q5c"/>
-                                </constraints>
-                                <state key="normal" title="Clear">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="clearButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cXK-fq-9Nz"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.55607834420000002" green="0.78278896509999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wsu-2M-Rep" firstAttribute="top" secondItem="hu3-nI-nZj" secondAttribute="bottom" constant="50" id="32K-2f-xFZ"/>
                             <constraint firstItem="hu3-nI-nZj" firstAttribute="height" secondItem="cnP-9J-1Gj" secondAttribute="height" multiplier="1.25" id="34t-vA-HgS"/>
-                            <constraint firstItem="CVN-Kw-3TJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="Bf7-Lm-q7Y"/>
                             <constraint firstItem="wsu-2M-Rep" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Eck-QN-sKu"/>
                             <constraint firstItem="wsu-2M-Rep" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="KAk-Mu-mc5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Da0-k3-Jvy" secondAttribute="trailing" constant="20" id="Mp8-3R-5Kd"/>
                             <constraint firstItem="Da0-k3-Jvy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="RZq-Bp-Klh"/>
-                            <constraint firstItem="CVN-Kw-3TJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="315" id="SQn-KS-vN1"/>
                             <constraint firstItem="Da0-k3-Jvy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Vyb-77-t34"/>
                             <constraint firstItem="hu3-nI-nZj" firstAttribute="top" secondItem="Da0-k3-Jvy" secondAttribute="bottom" constant="40" id="Wc6-iS-Qsy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wsu-2M-Rep" secondAttribute="trailing" constant="20" id="ZJ3-Gf-dDc"/>
                             <constraint firstItem="hu3-nI-nZj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ci1-gs-4H9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wsu-2M-Rep" secondAttribute="trailing" constant="20" id="ejn-Ak-rRW"/>
-                            <constraint firstItem="CVN-Kw-3TJ" firstAttribute="trailing" secondItem="Da0-k3-Jvy" secondAttribute="trailing" id="oON-br-ShB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hu3-nI-nZj" secondAttribute="trailing" constant="20" id="xjr-RZ-ivr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -236,7 +219,6 @@
                         <outlet property="ab3TextField" destination="NMe-dx-jbC" id="h3W-Iq-1qk"/>
                         <outlet property="bodyFat" destination="Zc6-Hb-eXb" id="icL-x5-NmO"/>
                         <outlet property="bodyWeight" destination="cnP-9J-1Gj" id="LYA-cx-1uV"/>
-                        <outlet property="clearButton" destination="CVN-Kw-3TJ" id="WE1-LQ-lLK"/>
                         <outlet property="minWeight" destination="nJd-p8-w2D" id="SSe-ib-yC1"/>
                         <outlet property="scap1TextField" destination="rSk-5f-Ypt" id="WNq-5O-Kmj"/>
                         <outlet property="scap2TextField" destination="Smj-Ki-KwQ" id="SEY-fo-Elo"/>
@@ -262,14 +244,24 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="df9-Ub-J0b">
-                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
                                         <state key="normal" title="Previous"/>
                                         <connections>
                                             <action selector="previousButtonAction:" destination="zys-6b-292" eventType="touchUpInside" id="A3M-uB-mao"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVN-Kw-3TJ">
+                                        <rect key="frame" x="125" y="0.0" width="125" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Clear">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="calculateButtonAction:" destination="zys-6b-292" eventType="touchUpInside" id="GDh-zS-Nyx"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2B-jp-pS5">
-                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="30"/>
+                                        <rect key="frame" x="250" y="0.0" width="125" height="30"/>
                                         <state key="normal" title="Next"/>
                                         <connections>
                                             <action selector="nextButtonAction:" destination="zys-6b-292" eventType="touchUpInside" id="awK-Zs-EYX"/>

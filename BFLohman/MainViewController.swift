@@ -12,7 +12,6 @@ class MainViewController: UIViewController, UITextFieldDelegate, customButtonVie
     
     // IBOutlets
     @IBOutlet weak var bodyWeight: UITextField!
-    @IBOutlet weak var clearButton: UIButton!
     
     // Abdomen
     @IBOutlet weak var ab1TextField: UITextField!
@@ -34,10 +33,6 @@ class MainViewController: UIViewController, UITextFieldDelegate, customButtonVie
     @IBOutlet weak var minWeight: UILabel!
     
     // IB Actions
-    @IBAction func clearButton(_ sender: Any) {
-        clearTextFields()
-    }
-    
     @IBAction func calculateButton(_ sender: Any) {
         setBodyFat()
     }
@@ -77,7 +72,6 @@ class MainViewController: UIViewController, UITextFieldDelegate, customButtonVie
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTextFields()
-        clearButton.layer.cornerRadius = clearButton.frame.size.height/2
         
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         tap.cancelsTouchesInView = false
@@ -110,19 +104,6 @@ class MainViewController: UIViewController, UITextFieldDelegate, customButtonVie
             textField.keyboardType = .decimalPad
             textField.inputAccessoryView = thisView
         }
-    }
-    
-    func clearTextFields() {
-        guard let textFields = textFields else {
-            return
-        }
-        
-        for textfield in textFields {
-            textfield.text = ""
-        }
-        
-        bodyFat.text = "00"
-        minWeight.text = "00"
     }
     
     func calculateBodyDensity() -> Float {
@@ -159,6 +140,19 @@ class MainViewController: UIViewController, UITextFieldDelegate, customButtonVie
     }
     
     // KeyboardButtonsDelegate required methods
+    func clear() {
+        guard let textFields = textFields else {
+            return
+        }
+        
+        for textfield in textFields {
+            textfield.text = ""
+        }
+        
+        bodyFat.text = "00"
+        minWeight.text = "00"
+    }
+    
     func nextTextField() {
         guard let textField = currentTextField else {
             return
@@ -178,10 +172,6 @@ class MainViewController: UIViewController, UITextFieldDelegate, customButtonVie
             nextTextField.becomeFirstResponder()
         }
  
-    }
-    
-    func calculate() {
-        setBodyFat()
     }
     
     func previousTextField() {

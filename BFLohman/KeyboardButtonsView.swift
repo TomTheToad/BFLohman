@@ -10,7 +10,7 @@ import UIKit
 
 protocol customButtonViewDelegate {
     func previousTextField()
-    func calculate()
+    func clear()
     func nextTextField()
 }
 
@@ -23,7 +23,7 @@ class KeyboardButtonsView: UIView {
     }
     
     @IBAction func calculateButtonAction(_ sender: Any) {
-        viewDelegate.calculate()
+        viewDelegate.clear()
     }
     
     @IBAction func nextButtonAction(_ sender: Any) {

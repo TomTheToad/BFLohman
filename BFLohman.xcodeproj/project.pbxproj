@@ -8,9 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		C712B3011FE2F9B9004D1102 /* TeamCaliperCalculator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C712B2FF1FE2F9B9004D1102 /* TeamCaliperCalculator.xcdatamodeld */; };
+		C726A7631FEC9439004FC9C5 /* RecordDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C726A7621FEC9439004FC9C5 /* RecordDetailViewController.swift */; };
+		C726A7651FEC9471004FC9C5 /* RecordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C726A7641FEC9471004FC9C5 /* RecordTableViewController.swift */; };
+		C726A7691FEC9584004FC9C5 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = C726A7681FEC9584004FC9C5 /* Record.swift */; };
+		C726A76B1FEC969E004FC9C5 /* RecordTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C726A76A1FEC969E004FC9C5 /* RecordTableCell.swift */; };
 		C738195B1FDEC8F000C14376 /* KeyboardButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C738195A1FDEC8F000C14376 /* KeyboardButtonsView.swift */; };
 		C758F8571FE2BC000068EFD9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C758F8561FE2BC000068EFD9 /* CoreData.framework */; };
-		C758F85A1FE2BD360068EFD9 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C758F8591FE2BD360068EFD9 /* CoreDataController.swift */; };
+		C758F85A1FE2BD360068EFD9 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C758F8591FE2BD360068EFD9 /* CoreDataHandler.swift */; };
 		C779DEFB1FDAD00E0011A5D2 /* KeyboardButtonsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779DEFA1FDAD00E0011A5D2 /* KeyboardButtonsController.swift */; };
 		C7FD45801FCCDD0800AD38FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FD457F1FCCDD0800AD38FB /* AppDelegate.swift */; };
 		C7FD45821FCCDD0800AD38FB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FD45811FCCDD0800AD38FB /* MainViewController.swift */; };
@@ -21,9 +25,13 @@
 
 /* Begin PBXFileReference section */
 		C712B3001FE2F9B9004D1102 /* TeamCaliperCalculator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TeamCaliperCalculator.xcdatamodel; sourceTree = "<group>"; };
+		C726A7621FEC9439004FC9C5 /* RecordDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailViewController.swift; sourceTree = "<group>"; };
+		C726A7641FEC9471004FC9C5 /* RecordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewController.swift; sourceTree = "<group>"; };
+		C726A7681FEC9584004FC9C5 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		C726A76A1FEC969E004FC9C5 /* RecordTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableCell.swift; sourceTree = "<group>"; };
 		C738195A1FDEC8F000C14376 /* KeyboardButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButtonsView.swift; sourceTree = "<group>"; };
 		C758F8561FE2BC000068EFD9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		C758F8591FE2BD360068EFD9 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
+		C758F8591FE2BD360068EFD9 /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		C779DEFA1FDAD00E0011A5D2 /* KeyboardButtonsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButtonsController.swift; sourceTree = "<group>"; };
 		C7FD457C1FCCDD0800AD38FB /* BFLohman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BFLohman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7FD457F1FCCDD0800AD38FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +54,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C726A75F1FEC932E004FC9C5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C758F8581FE2BD1D0068EFD9 /* CoreData */,
+				C726A7681FEC9584004FC9C5 /* Record.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C726A7601FEC933B004FC9C5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C7FD45831FCCDD0800AD38FB /* Main.storyboard */,
+				C7FD45881FCCDD0800AD38FB /* LaunchScreen.storyboard */,
+				C738195A1FDEC8F000C14376 /* KeyboardButtonsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C726A7611FEC9343004FC9C5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C7FD45811FCCDD0800AD38FB /* MainViewController.swift */,
+				C779DEFA1FDAD00E0011A5D2 /* KeyboardButtonsController.swift */,
+				C726A7621FEC9439004FC9C5 /* RecordDetailViewController.swift */,
+				C726A7641FEC9471004FC9C5 /* RecordTableViewController.swift */,
+				C726A76A1FEC969E004FC9C5 /* RecordTableCell.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		C758F8551FE2BC000068EFD9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -57,7 +96,7 @@
 		C758F8581FE2BD1D0068EFD9 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				C758F8591FE2BD360068EFD9 /* CoreDataController.swift */,
+				C758F8591FE2BD360068EFD9 /* CoreDataHandler.swift */,
 				C712B2FF1FE2F9B9004D1102 /* TeamCaliperCalculator.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -83,14 +122,11 @@
 		C7FD457E1FCCDD0800AD38FB /* BFLohman */ = {
 			isa = PBXGroup;
 			children = (
-				C758F8581FE2BD1D0068EFD9 /* CoreData */,
+				C726A7611FEC9343004FC9C5 /* Controllers */,
+				C726A7601FEC933B004FC9C5 /* View */,
+				C726A75F1FEC932E004FC9C5 /* Model */,
 				C7FD457F1FCCDD0800AD38FB /* AppDelegate.swift */,
-				C7FD45811FCCDD0800AD38FB /* MainViewController.swift */,
-				C7FD45831FCCDD0800AD38FB /* Main.storyboard */,
-				C738195A1FDEC8F000C14376 /* KeyboardButtonsView.swift */,
-				C779DEFA1FDAD00E0011A5D2 /* KeyboardButtonsController.swift */,
 				C7FD45861FCCDD0800AD38FB /* Assets.xcassets */,
-				C7FD45881FCCDD0800AD38FB /* LaunchScreen.storyboard */,
 				C7FD458B1FCCDD0800AD38FB /* Info.plist */,
 			);
 			path = BFLohman;
@@ -168,9 +204,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C726A7651FEC9471004FC9C5 /* RecordTableViewController.swift in Sources */,
+				C726A7631FEC9439004FC9C5 /* RecordDetailViewController.swift in Sources */,
+				C726A7691FEC9584004FC9C5 /* Record.swift in Sources */,
+				C726A76B1FEC969E004FC9C5 /* RecordTableCell.swift in Sources */,
 				C7FD45821FCCDD0800AD38FB /* MainViewController.swift in Sources */,
 				C7FD45801FCCDD0800AD38FB /* AppDelegate.swift in Sources */,
-				C758F85A1FE2BD360068EFD9 /* CoreDataController.swift in Sources */,
+				C758F85A1FE2BD360068EFD9 /* CoreDataHandler.swift in Sources */,
 				C779DEFB1FDAD00E0011A5D2 /* KeyboardButtonsController.swift in Sources */,
 				C738195B1FDEC8F000C14376 /* KeyboardButtonsView.swift in Sources */,
 				C712B3011FE2F9B9004D1102 /* TeamCaliperCalculator.xcdatamodeld in Sources */,

@@ -11,6 +11,7 @@ import UIKit
 class MainViewController: UIViewController, UITextFieldDelegate, customButtonViewDelegate {
     
     // IBOutlets
+    @IBOutlet weak var name: UITextField!
     @IBOutlet weak var bodyWeight: UITextField!
     
     // Abdomen
@@ -81,7 +82,7 @@ class MainViewController: UIViewController, UITextFieldDelegate, customButtonVie
     
     // Add delegate and keyboard type
     func setUpTextFields() {
-        textFields = [bodyWeight, ab1TextField, ab2TextField, ab3TextField, tri1TextField, tri2TextField, tri3TextField, scap1TextField, scap2TextField, scap3TextField]
+        textFields = [name, bodyWeight, ab1TextField, ab2TextField, ab3TextField, tri1TextField, tri2TextField, tri3TextField, scap1TextField, scap2TextField, scap3TextField]
         
         guard let textFields = textFields else {
             return
